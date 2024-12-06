@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mistral Model for Medical QnA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='favicon.png') }}"
+      type="image/png"
+    />
+  </head>
+
+  <body>
+    <h1>
+      <img
+        src="{{ url_for('static', filename='favicon.png') }}"
+        alt="Medical Chatbot Icon"
+        style="height: 50px; vertical-align: middle; margin-right: 10px"
+      />
+      Medical Chatbot
+    </h1>
+    <div id="chatContainer"></div>
+    <div class="input-area">
+      <textarea
+        id="user_input"
+        placeholder="Type your prompt here..."
+        rows="3"
+      ></textarea>
+      <button id="sendMessage" type="button">
+        <span class="material-symbols-rounded">send</span>
+      </button>
+      <button id="uploadAudio" type="button">
+        <span class="material-symbols-rounded">file_upload</span>
+      </button>
+    </div>
+    <input type="file" id="audioFile" accept="audio/*" style="display: none" />
+    <button id="ttsBtn">🔊 Read Response</button>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
